@@ -20,7 +20,7 @@ public class TravelCompany {
             Files.createDirectories(Paths.get("/client base"));
         }
         catch (IOException ioexception){
-            LOGGER.warning("efefefefef");
+            LOGGER.warning("efefe");
         }
     }
 
