@@ -7,8 +7,14 @@ import by.epam.firsttask.entity.Voucher;
 public class CruiseVoucher extends Voucher {
     private CruiseType cruiseType;
 
-    public CruiseVoucher(TransportType transportType, FoodType foodType, int dayAmount, CruiseType cruiseType){
-        super(transportType, foodType, dayAmount);
+    public CruiseVoucher() {
+        super();
+        this.cruiseType = null;
+    }
+
+    public CruiseVoucher(TransportType transportType, FoodType foodType,
+                         int dayAmount, CruiseType cruiseType, double price){
+        super(transportType, foodType, dayAmount, price);
 
         this.cruiseType = cruiseType;
     }

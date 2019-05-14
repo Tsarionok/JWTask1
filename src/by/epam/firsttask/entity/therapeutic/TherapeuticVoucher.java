@@ -7,8 +7,14 @@ import by.epam.firsttask.entity.Voucher;
 public class TherapeuticVoucher extends Voucher {
     private TherapeuticType therapeuticType;
 
-    public TherapeuticVoucher(TransportType transportType, FoodType foodType, int dayAmount, TherapeuticType therapeuticType) {
-        super(transportType, foodType, dayAmount);
+    public TherapeuticVoucher() {
+        super();
+        this.therapeuticType = null;
+    }
+
+    public TherapeuticVoucher(TransportType transportType, FoodType foodType,
+                              int dayAmount, TherapeuticType therapeuticType, double price) {
+        super(transportType, foodType, dayAmount, price);
 
         this.therapeuticType = therapeuticType;
     }

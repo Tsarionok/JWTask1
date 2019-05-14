@@ -7,8 +7,13 @@ import by.epam.firsttask.entity.Voucher;
 public class RelaxVoucher extends Voucher {
     private RelaxType relaxType;
 
-    public RelaxVoucher(TransportType transportType, FoodType foodType, int dayAmount, RelaxType relaxType){
-        super(transportType, foodType, dayAmount);
+    public RelaxVoucher() {
+        super();
+        this.relaxType = null;
+    }
+
+    public RelaxVoucher(TransportType transportType, FoodType foodType, int dayAmount, RelaxType relaxType, double price){
+        super(transportType, foodType, dayAmount, price);
 
         this.relaxType = relaxType;
     }
