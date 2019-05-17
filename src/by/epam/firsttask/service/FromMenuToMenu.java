@@ -17,9 +17,11 @@ import by.epam.firsttask.entity.therapeutic.TherapeuticVoucher;
 public class FromMenuToMenu {
     private ClientUI clientUI;
     private Voucher voucher;
+    private TravelCompany travelCompany;
 
     public FromMenuToMenu() {
         clientUI = ClientUI.getInstance();
+        travelCompany = new TravelCompany();
     }
 
     public int travelFromMainMenu() {
@@ -188,6 +190,6 @@ public class FromMenuToMenu {
     }
 
     public void saveVoucherInBase() {
-        TravelCompany.writeVoucher(voucher);
+        travelCompany.writeVoucher(voucher);
     }
 }

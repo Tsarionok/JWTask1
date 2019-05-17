@@ -34,7 +34,7 @@ public class TravelCompany {
         }
     }
 
-    public static void writeVoucher(TransportType transportType, FoodType foodType,
+    public void writeVoucher(TransportType transportType, FoodType foodType,
                              int dayAmount, VoucherType voucherType, double price) {
 
         List<String> voucherInfo = Arrays.asList(transportType.toString(),
@@ -54,7 +54,7 @@ public class TravelCompany {
         }
     }
 
-    public static void writeVoucher(Voucher voucher){
+    public void writeVoucher(Voucher voucher){
         writeVoucher(voucher.getTransportType(), voucher.getFoodType(), voucher.getDayAmount(),
                 voucher.getVoucherType(), voucher.getPrice());
     }
