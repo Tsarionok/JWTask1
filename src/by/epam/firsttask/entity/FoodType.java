@@ -1,6 +1,9 @@
 package by.epam.firsttask.entity;
 
-public enum FoodType implements VoucherType{
+import java.util.Optional;
+import java.util.stream.Stream;
+
+public enum FoodType implements Guiding {
     MEAT ("Meat"),
     FISH ("Fish"),
     VEGETABLES ("Vegetables"),
@@ -22,5 +25,11 @@ public enum FoodType implements VoucherType{
     @Override
     public String toString() {
         return this.name;
+    }
+
+    public static Optional<FoodType> of(String type) {
+        return Stream.of(FoodType.values())
+                .filter(e -> e.name.equalsIgnoreCase(type))
+                .findFirst();
     }
 }

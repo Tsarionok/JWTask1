@@ -3,8 +3,7 @@ package by.epam.firsttask.dao;
 import by.epam.firsttask.entity.FoodType;
 import by.epam.firsttask.entity.TransportType;
 import by.epam.firsttask.entity.Voucher;
-import by.epam.firsttask.entity.VoucherType;
-import by.epam.firsttask.service.FromMenuToMenu;
+import by.epam.firsttask.entity.Guiding;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -22,7 +21,9 @@ public class TravelCompany {
     private static final Logger log = LogManager.getLogger(TravelCompany.class);
     private static Path dataBase;
 
-    public TravelCompany() {
+    private final static TravelCompany INSTANCE = new TravelCompany();
+
+    private TravelCompany() {
         dataBase = Paths.get("dataBase/voucherBase.txt");
         try {
             if (Files.notExists(dataBase)) {
@@ -34,13 +35,17 @@ public class TravelCompany {
         }
     }
 
+    public static TravelCompany getInstance() {
+        return INSTANCE;
+    }
+
     public void writeVoucher(TransportType transportType, FoodType foodType,
-                             int dayAmount, VoucherType voucherType, double price) {
+                             int dayAmount, Guiding guiding, double price) {
 
         List<String> voucherInfo = Arrays.asList(transportType.toString(),
                                                  foodType.toString(),
                                                  Integer.toString(dayAmount),
-                                                 voucherType.toString(),
+                                                 guiding.toString(),
                                                  Double.toString(price),
                                                  "\n");
         try {
@@ -56,7 +61,7 @@ public class TravelCompany {
 
     public void writeVoucher(Voucher voucher){
         writeVoucher(voucher.getTransportType(), voucher.getFoodType(), voucher.getDayAmount(),
-                voucher.getVoucherType(), voucher.getPrice());
+                voucher.getGuiding(), voucher.getPrice());
     }
 
     public void readVoucher() {

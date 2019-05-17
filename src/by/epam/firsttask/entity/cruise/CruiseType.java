@@ -1,8 +1,11 @@
 package by.epam.firsttask.entity.cruise;
 
-import by.epam.firsttask.entity.VoucherType;
+import by.epam.firsttask.entity.Guiding;
 
-public enum CruiseType implements VoucherType {
+import java.util.Optional;
+import java.util.stream.Stream;
+
+public enum CruiseType implements Guiding {
     SEA ("Sea"), RIVER ("River");
 
     private final String name;
@@ -20,6 +23,12 @@ public enum CruiseType implements VoucherType {
     @Override
     public String toString() {
         return this.name;
+    }
+
+    public static Optional<CruiseType> of(String type) {
+        return Stream.of(CruiseType.values())
+                .filter(e -> e.name.equalsIgnoreCase(type))
+                .findFirst();
     }
 
 }

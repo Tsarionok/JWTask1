@@ -1,8 +1,11 @@
 package by.epam.firsttask.entity.excursion;
 
-import by.epam.firsttask.entity.VoucherType;
+import by.epam.firsttask.entity.Guiding;
 
-public enum ExcursionType implements VoucherType {
+import java.util.Optional;
+import java.util.stream.Stream;
+
+public enum ExcursionType implements Guiding {
     ONE_DAY ("One"), MANY_DAY ("Many");
 
     private final String name;
@@ -20,5 +23,11 @@ public enum ExcursionType implements VoucherType {
     @Override
     public String toString() {
         return this.name;
+    }
+
+    public static Optional<ExcursionType> of(String type) {
+        return Stream.of(ExcursionType.values())
+                .filter(e -> e.name.equalsIgnoreCase(type))
+                .findFirst();
     }
 }

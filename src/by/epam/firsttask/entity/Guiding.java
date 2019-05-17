@@ -1,5 +1,5 @@
 package by.epam.firsttask.entity;
 
-public interface VoucherType {
+public interface Guiding {
     boolean equalsName(String otherName);
 }

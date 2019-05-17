@@ -1,8 +1,11 @@
 package by.epam.firsttask.entity.relax;
 
-import by.epam.firsttask.entity.VoucherType;
+import by.epam.firsttask.entity.Guiding;
 
-public enum RelaxType implements VoucherType {
+import java.util.Optional;
+import java.util.stream.Stream;
+
+public enum RelaxType implements Guiding {
     SEA ("Sea"), MOUNTAINS ("Mountains");
 
     private final String name;
@@ -20,5 +23,11 @@ public enum RelaxType implements VoucherType {
     @Override
     public String toString() {
         return this.name;
+    }
+
+    public static Optional<RelaxType> of(String type) {
+        return Stream.of(RelaxType.values())
+                .filter(e -> e.name.equalsIgnoreCase(type))
+                .findFirst();
     }
 }

@@ -5,7 +5,7 @@ public abstract class Voucher {
     private FoodType foodType;
     private int dayAmount;
     private double price;
-    private VoucherType voucherType;
+    private Guiding guiding;
 
     public Voucher() {
         this.transportType = null;
@@ -37,8 +37,8 @@ public abstract class Voucher {
         return price;
     }
 
-    public VoucherType getVoucherType() {
-        return voucherType;
+    public Guiding getGuiding() {
+        return guiding;
     }
 
     public void setTransportType(TransportType transportType) {
@@ -57,6 +57,6 @@ public abstract class Voucher {
         this.price = price;
     }
 
-    public void setVoucherType(VoucherType voucherType) {this.voucherType = voucherType;}
+    public void setGuiding(Guiding guiding) {this.guiding = guiding;}
 }
 

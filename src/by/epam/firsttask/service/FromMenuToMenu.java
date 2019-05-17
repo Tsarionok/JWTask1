@@ -17,11 +17,11 @@ import by.epam.firsttask.entity.therapeutic.TherapeuticVoucher;
 public class FromMenuToMenu {
     private ClientUI clientUI;
     private Voucher voucher;
-    private TravelCompany travelCompany;
+    private TravelCompany travelCompany= TravelCompany.getInstance();
 
     public FromMenuToMenu() {
         clientUI = ClientUI.getInstance();
-        travelCompany = new TravelCompany();
+
     }
 
     public int travelFromMainMenu() {
@@ -55,11 +55,11 @@ public class FromMenuToMenu {
         voucher = new CruiseVoucher();
         switch (clientUI.cruiseChoose()) {
             case 1: {
-                voucher.setVoucherType(CruiseType.SEA);
+                voucher.setGuiding(CruiseType.SEA);
                 break;
             }
             case 2: {
-                voucher.setVoucherType(CruiseType.RIVER);
+                voucher.setGuiding(CruiseType.RIVER);
                 break;
             }
             default: {
@@ -73,11 +73,11 @@ public class FromMenuToMenu {
         voucher = new ExcursionVoucher();
         switch (clientUI.excursionChoose()) {
             case 1: {
-                voucher.setVoucherType(ExcursionType.ONE_DAY);
+                voucher.setGuiding(ExcursionType.ONE_DAY);
                 break;
             }
             case 2: {
-                voucher.setVoucherType(ExcursionType.MANY_DAY);
+                voucher.setGuiding(ExcursionType.MANY_DAY);
                 break;
             }
             default: {
@@ -91,11 +91,11 @@ public class FromMenuToMenu {
         voucher = new RelaxVoucher();
         switch (clientUI.relaxChoose()) {
             case 1: {
-                voucher.setVoucherType(RelaxType.SEA);
+                voucher.setGuiding(RelaxType.SEA);
                 break;
             }
             case 2: {
-                voucher.setVoucherType(RelaxType.MOUNTAINS);
+                voucher.setGuiding(RelaxType.MOUNTAINS);
                 break;
             }
             default: {
@@ -109,15 +109,15 @@ public class FromMenuToMenu {
         voucher = new TherapeuticVoucher();
         switch (clientUI.therapyChoose()) {
             case 1: {
-                voucher.setVoucherType(TherapeuticType.FITNESS);
+                voucher.setGuiding(TherapeuticType.FITNESS);
                 break;
             }
             case 2: {
-                voucher.setVoucherType(TherapeuticType.SPA);
+                voucher.setGuiding(TherapeuticType.SPA);
                 break;
             }
             case 3: {
-                voucher.setVoucherType(TherapeuticType.WEIGHT_LOSS);
+                voucher.setGuiding(TherapeuticType.WEIGHT_LOSS);
                 break;
             }
             default: {
