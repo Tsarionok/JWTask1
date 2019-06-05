@@ -1,15 +1,10 @@
-package by.epam.firsttask.entity.therapeutic;
-
-import by.epam.firsttask.entity.FoodType;
-import by.epam.firsttask.entity.TransportType;
-import by.epam.firsttask.entity.Voucher;
+package by.epam.firsttask.entity;
 
 public class TherapeuticVoucher extends Voucher {
     private TherapeuticType therapeuticType;
 
     public TherapeuticVoucher() {
         super();
-        this.therapeuticType = null;
     }
 
     public TherapeuticVoucher(TransportType transportType, FoodType foodType,

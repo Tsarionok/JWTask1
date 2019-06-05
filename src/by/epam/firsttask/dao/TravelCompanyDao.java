@@ -16,14 +16,14 @@ import java.nio.file.StandardOpenOption;
 import java.util.Arrays;
 import java.util.List;
 
-public class TravelCompany {
+public class TravelCompanyDao {
 
-    private static final Logger log = LogManager.getLogger(TravelCompany.class);
+    private static final Logger log = LogManager.getLogger(TravelCompanyDao.class);
     private static Path dataBase;
 
-    private final static TravelCompany INSTANCE = new TravelCompany();
+    private final static TravelCompanyDao INSTANCE = new TravelCompanyDao();
 
-    private TravelCompany() {
+    private TravelCompanyDao() {
         dataBase = Paths.get("dataBase/voucherBase.txt");
         try {
             if (Files.notExists(dataBase)) {
@@ -35,7 +35,7 @@ public class TravelCompany {
         }
     }
 
-    public static TravelCompany getInstance() {
+    public static TravelCompanyDao getInstance() {
         return INSTANCE;
     }
 
@@ -64,7 +64,7 @@ public class TravelCompany {
                 voucher.getGuiding(), voucher.getPrice());
     }
 
-    public void readVoucher() {
+    public Voucher readVoucher() {
         try {
 
             Reader reader = Files.newBufferedReader(dataBase, Charset.forName("UTF-8"));
@@ -88,5 +88,6 @@ public class TravelCompany {
         } catch (IOException ioException) {
             log.error("FileReadingException");
         }
+        return null;
     }
 }

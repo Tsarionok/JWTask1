@@ -2,7 +2,7 @@ package by.epam.firsttask.controller;
 
 import java.util.Scanner;
 
-public class ClientUI implements Controlled{
+public class ClientUI {
     private final static ClientUI INSTANCE = new ClientUI();
 
     private ClientUI() {

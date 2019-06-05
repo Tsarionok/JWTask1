@@ -1,16 +1,16 @@
-package by.epam.firsttask.entity.excursion;
-
-import by.epam.firsttask.entity.Guiding;
+package by.epam.firsttask.entity;
 
 import java.util.Optional;
 import java.util.stream.Stream;
 
-public enum ExcursionType implements Guiding {
-    ONE_DAY ("One"), MANY_DAY ("Many");
+public enum TherapeuticType implements Guiding {
+    FITNESS ("Fitness"),
+    SPA ("Spa"),
+    WEIGHT_LOSS ("Weight_loss");
 
     private final String name;
 
-    private ExcursionType(String s) {
+    private TherapeuticType(String s) {
         name = s;
     }
 
@@ -25,9 +25,10 @@ public enum ExcursionType implements Guiding {
         return this.name;
     }
 
-    public static Optional<ExcursionType> of(String type) {
-        return Stream.of(ExcursionType.values())
+    public static Optional<TherapeuticType> of(String type) {
+        return Stream.of(TherapeuticType.values())
                 .filter(e -> e.name.equalsIgnoreCase(type))
                 .findFirst();
     }
+
 }

@@ -1,15 +1,10 @@
-package by.epam.firsttask.entity.relax;
-
-import by.epam.firsttask.entity.FoodType;
-import by.epam.firsttask.entity.TransportType;
-import by.epam.firsttask.entity.Voucher;
+package by.epam.firsttask.entity;
 
 public class RelaxVoucher extends Voucher {
     private RelaxType relaxType;
 
     public RelaxVoucher() {
         super();
-        this.relaxType = null;
     }
 
     public RelaxVoucher(TransportType transportType, FoodType foodType, int dayAmount, RelaxType relaxType, double price){

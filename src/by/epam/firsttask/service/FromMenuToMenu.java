@@ -1,23 +1,23 @@
 package by.epam.firsttask.service;
 
 import by.epam.firsttask.controller.ClientUI;
-import by.epam.firsttask.dao.TravelCompany;
+import by.epam.firsttask.dao.TravelCompanyDao;
 import by.epam.firsttask.entity.FoodType;
 import by.epam.firsttask.entity.TransportType;
 import by.epam.firsttask.entity.Voucher;
-import by.epam.firsttask.entity.cruise.CruiseType;
-import by.epam.firsttask.entity.cruise.CruiseVoucher;
-import by.epam.firsttask.entity.excursion.ExcursionType;
-import by.epam.firsttask.entity.excursion.ExcursionVoucher;
-import by.epam.firsttask.entity.relax.RelaxType;
-import by.epam.firsttask.entity.relax.RelaxVoucher;
-import by.epam.firsttask.entity.therapeutic.TherapeuticType;
-import by.epam.firsttask.entity.therapeutic.TherapeuticVoucher;
+import by.epam.firsttask.entity.CruiseType;
+import by.epam.firsttask.entity.CruiseVoucher;
+import by.epam.firsttask.entity.ExcursionType;
+import by.epam.firsttask.entity.ExcursionVoucher;
+import by.epam.firsttask.entity.RelaxType;
+import by.epam.firsttask.entity.RelaxVoucher;
+import by.epam.firsttask.entity.TherapeuticType;
+import by.epam.firsttask.entity.TherapeuticVoucher;
 
 public class FromMenuToMenu {
     private ClientUI clientUI;
     private Voucher voucher;
-    private TravelCompany travelCompany= TravelCompany.getInstance();
+    private TravelCompanyDao travelCompanyDao = TravelCompanyDao.getInstance();
 
     public FromMenuToMenu() {
         clientUI = ClientUI.getInstance();
@@ -190,6 +190,7 @@ public class FromMenuToMenu {
     }
 
     public void saveVoucherInBase() {
-        travelCompany.writeVoucher(voucher);
+        travelCompanyDao.writeVoucher(voucher);
+        travelCompanyDao.readVoucher();             // Just show
     }
 }

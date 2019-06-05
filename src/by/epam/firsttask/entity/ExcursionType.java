@@ -1,18 +1,14 @@
-package by.epam.firsttask.entity.therapeutic;
-
-import by.epam.firsttask.entity.Guiding;
+package by.epam.firsttask.entity;
 
 import java.util.Optional;
 import java.util.stream.Stream;
 
-public enum TherapeuticType implements Guiding {
-    FITNESS ("Fitness"),
-    SPA ("Spa"),
-    WEIGHT_LOSS ("Weight_loss");
+public enum ExcursionType implements Guiding {
+    ONE_DAY ("One"), MANY_DAY ("Many");
 
     private final String name;
 
-    private TherapeuticType(String s) {
+    private ExcursionType(String s) {
         name = s;
     }
 
@@ -27,10 +23,9 @@ public enum TherapeuticType implements Guiding {
         return this.name;
     }
 
-    public static Optional<TherapeuticType> of(String type) {
-        return Stream.of(TherapeuticType.values())
+    public static Optional<ExcursionType> of(String type) {
+        return Stream.of(ExcursionType.values())
                 .filter(e -> e.name.equalsIgnoreCase(type))
                 .findFirst();
     }
-
 }

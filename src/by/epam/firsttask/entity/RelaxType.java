@@ -1,16 +1,14 @@
-package by.epam.firsttask.entity.cruise;
-
-import by.epam.firsttask.entity.Guiding;
+package by.epam.firsttask.entity;
 
 import java.util.Optional;
 import java.util.stream.Stream;
 
-public enum CruiseType implements Guiding {
-    SEA ("Sea"), RIVER ("River");
+public enum RelaxType implements Guiding {
+    SEA ("Sea"), MOUNTAINS ("Mountains");
 
     private final String name;
 
-    private CruiseType(String s) {
+    private RelaxType(String s) {
         name = s;
     }
 
@@ -25,10 +23,9 @@ public enum CruiseType implements Guiding {
         return this.name;
     }
 
-    public static Optional<CruiseType> of(String type) {
-        return Stream.of(CruiseType.values())
+    public static Optional<RelaxType> of(String type) {
+        return Stream.of(RelaxType.values())
                 .filter(e -> e.name.equalsIgnoreCase(type))
                 .findFirst();
     }
-
 }

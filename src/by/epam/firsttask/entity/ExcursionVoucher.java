@@ -1,15 +1,10 @@
-package by.epam.firsttask.entity.excursion;
-
-import by.epam.firsttask.entity.FoodType;
-import by.epam.firsttask.entity.TransportType;
-import by.epam.firsttask.entity.Voucher;
+package by.epam.firsttask.entity;
 
 public class ExcursionVoucher extends Voucher {
     private ExcursionType excursionType;
 
     public ExcursionVoucher() {
         super();
-        this.excursionType = null;
     }
 
     public ExcursionVoucher(TransportType transportType, FoodType foodType,

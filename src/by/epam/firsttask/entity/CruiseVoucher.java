@@ -1,15 +1,10 @@
-package by.epam.firsttask.entity.cruise;
-
-import by.epam.firsttask.entity.FoodType;
-import by.epam.firsttask.entity.TransportType;
-import by.epam.firsttask.entity.Voucher;
+package by.epam.firsttask.entity;
 
 public class CruiseVoucher extends Voucher {
     private CruiseType cruiseType;
 
     public CruiseVoucher() {
         super();
-        this.cruiseType = null;
     }
 
     public CruiseVoucher(TransportType transportType, FoodType foodType,
